@@ -13,7 +13,7 @@ env:
   CLUSTER_ZONE: southamerica-west1-a 
 
   REPOSITORY: cicd-example
-  REPOSITORY_REGION: southamerica-west1-a 
+  REPOSITORY_REGION: southamerica-west1
 
   IMAGE: net-image
 
