@@ -60,10 +60,10 @@ jobs:
       uses: NuGet/setup-nuget@v1
 
     - name: Restore NuGet packages
-      run: nuget restore applications/clouddemo/net4/CloudDemo.Mvc.sln
+      run: nuget restore net4/CloudDemo.Mvc.sln
 
     - name: Build solution
-      run: msbuild /t:Rebuild /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /nologo applications/clouddemo/net4/CloudDemo.Mvc.sln
+      run: msbuild /t:Rebuild /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile net4/CloudDemo.Mvc.sln
 
     #
     # Build the Docker image and push it to Artifact Registry
@@ -73,10 +73,10 @@ jobs:
 
     - name: Lock image version in deployment.yaml
       shell: pwsh
-      run: (Get-Content applications\clouddemo\net4\deployment.yaml) -replace "CLOUDDEMO_IMAGE","${{ env.IMAGE_TAG }}" | Out-File -Encoding ASCII applications\clouddemo\net4\deployment.yaml
+      run: (Get-Content net4\deployment.yaml) -replace "CLOUDDEMO_IMAGE","${{ env.IMAGE_TAG }}" | Out-File -Encoding ASCII net4\deployment.yaml
 
     - name: Build Docker image
-      run: docker build --tag "${{ env.IMAGE_TAG }}" applications/clouddemo/net4
+      run: docker build --tag "${{ env.IMAGE_TAG }}" net4
 
     - name: Publish Docker image to Google Artifact Registry
       run: docker push "${{ env.IMAGE_TAG }}"
