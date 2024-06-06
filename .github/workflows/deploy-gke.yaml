@@ -12,7 +12,7 @@ env:
   CLUSTER: clouddemo-windows2 
   CLUSTER_ZONE: us-central1-a
 
-  REPOSITORY: cicd-example
+  REPOSITORY: clouddemo 
   REPOSITORY_REGION: us-central1-a
 
   IMAGE: net-image
