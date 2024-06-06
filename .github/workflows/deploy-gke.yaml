@@ -9,11 +9,11 @@ env:
   PROJECT_ID: gke-poc-421401
   PROJECT_NUMBER: 300481085503
 
-  CLUSTER: net-windows
-  CLUSTER_ZONE: southamerica-west1-a 
+  CLUSTER: clouddemo-windows2 
+  CLUSTER_ZONE: us-central1-a
 
   REPOSITORY: cicd-example
-  REPOSITORY_REGION: southamerica-west1
+  REPOSITORY_REGION: us-central1-a
 
   IMAGE: net-image
 
