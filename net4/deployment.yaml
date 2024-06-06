@@ -22,7 +22,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: clouddemo-net4
+  name: cicd-demo
   annotations:
     cloud.google.com/neg: '{"ingress": false}' # Disable NEG
 
@@ -33,18 +33,18 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: clouddemo-net4
+    app: cicd-demo
   type: NodePort
 
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: clouddemo-net4
+  name: cicd-demo
 spec:
   defaultBackend:
     service:
-      name: clouddemo-net4
+      name: cicd-demo
       port:
         number: 80
 
@@ -52,21 +52,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: clouddemo-net4
+  name: cicd-demo
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: clouddemo-net4
+      app: cicd-demo
   template:
     metadata:
       labels:
-        app: clouddemo-net4
+        app: cicd-demo
     spec:
       nodeSelector:
         kubernetes.io/os: windows
       containers:
-      - name: clouddemo-net4
+      - name: cicd-demo
         image: CLOUDDEMO_IMAGE
         ports:
           - containerPort: 80
