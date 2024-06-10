@@ -41,7 +41,8 @@
         <div class="header mdl-layout__header mdl-layout__header--waterfall">
             <div class="mdl-layout__header-row">
                 <span class="title mdl-layout-title">
-                    .NET on Google Cloud
+                    <img src="@Url.Content("~/Content/images/logo-tcit-color.png")" alt="Skylar approves" style="width: 100px; height: auto;">
+                    
                 </span>
 
 
@@ -50,7 +51,7 @@
                 <!-- Navigation -->
                 <div class="navigation-container">
                     <nav class="navigation mdl-navigation">
-                        <a href="https://console.cloud.google.com" class="mdl-navigation__link mdl-typography--text-uppercase" target="_blank">Console</a>
+                        <a href="https://console.cloud.google.com" class="mdl-navigation__link mdl-typography--text-uppercase" target="_blank">GCP Console</a>
                     </nav>
                 </div>
             </div>
@@ -84,8 +85,6 @@
             <footer class="footer mdl-mega-footer">
                 ASP.NET MVC version: @Html.Encode(typeof(ActionResult).Assembly.GetName().Version)
                 <br />
-                Request headers:
-                <pre>@Html.Encode(httpHeaders)</pre>
             </footer>
         </div>
     </div>

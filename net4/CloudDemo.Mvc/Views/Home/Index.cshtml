@@ -30,13 +30,12 @@
     @if (Model.IsRunningOnGoogleCloud)
     {
         <div class="logo-font slogan">
-            <div><img src="@Url.Content("~/Content/images/logo.png")" alt="Skylar approves"></div>
-            This app is running on @Html.DisplayFor(model => model.CloudRuntime) 
-            Genial
+            <div><img src="@Url.Content("~/Content/images/logo-tcit-color.png")" alt="Skylar approves"></div>
+            Esta aplicación está ejecutándose en @Html.DisplayFor(model => model.CloudRuntime) !!
         </div>
     }
     else
     {
-        <div class="logo-font slogan">Looks like this app has not been deployed yet...</div>
+        <div class="logo-font slogan">Not deployed in GKE yet</div>
     }
 </div>
